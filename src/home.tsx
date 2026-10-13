@@ -1,7 +1,11 @@
 export default function Home() {
   return (
     <main className="home-page">
-      <div className="featured-artwork" aria-label="Featured artwork image space" />
+      <img
+        className="featured-artwork"
+        src="/pics/birthday_girl.jpeg"
+        alt="Delainey Anderson's 'Birthday Girl'"
+      />
     </main>
   );
 }

@@ -136,6 +136,21 @@ function CvPage() {
           <p className="cv-year">2026</p>
           <p><strong>Annual Graduating BFA Exhibition</strong>, Fairbanks Galleries, Corvallis, OR</p>
           <p><strong>Nurture Nature</strong>, PRAXIS Gallery, Corvallis, OR</p>
+          <p><strong>Between Crisis and Hope</strong>, Memorial Union Concourse Gallery, Corvallis, OR</p>
+          <p><strong>Howland Community Open</strong>, The Arts Center, Corvallis, OR</p>
+          <p className="cv-year">2025</p>
+          <p><strong>Soundbox8 DRIP</strong>, PRAXIS Gallery, Corvallis, OR</p>
+          <p><strong>Soundbox8 DRIP - EDDY: A Transdisciplinary Feedback Loop</strong>, PRAXIS Gallery, Corvallis, OR</p>
+          <p><strong>Potential Spam - A Zine Exhibition</strong>, Corrine Woodman Gallery at The Art Center, Corvallis
+OR, Juror Evan Baden</p>
+          <p><strong>Howland Community Open</strong>, The Arts Center, Corvallis, OR</p>
+          <p className="cv-year">2023</p>
+          <p><strong>Core Studio</strong>, Praxis Gallery Corvallis OR, Juror Joan Truckenbrod</p>
+        </section>
+        <section className="cv-section">
+          <h2>Awards</h2>
+          <p className="cv-year">2026</p>
+          <p><strong>SVPDA Art Excellence Purchase Award</strong>, Oregon State University, Corvallis OR</p>
         </section>
       </div>
     </main>

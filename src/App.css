@@ -175,6 +175,8 @@
   width: min(100%, 720px);
   min-height: min(66vh, 670px);
   margin: 0 auto;
+  display: block;
+  object-fit: cover;
 }
 
 .page {

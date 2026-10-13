@@ -120,7 +120,6 @@ function SimplePage({ title, note }: { title: string; note: string }) {
 function CvPage() {
   return (
     <main className="page cv-page">
-      <p className="eyebrow">Delainey Anderson</p>
       <h1>CV</h1>
       <div className="cv-content">
         <section className="cv-section">

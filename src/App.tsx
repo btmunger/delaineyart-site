@@ -7,7 +7,7 @@ import { instagramUrl } from './siteConfig';
 const projects = [
   { label: '2 for 22', slug: '2-for-22' },
   { label: 'SNF Birds', slug: 'snf-birds' },
-  { label: 'Collection', slug: 'collection' },
+  { label: 'Other Work', slug: 'collection' },
 ];
 
 function SiteHeader() {
@@ -29,7 +29,7 @@ function SiteHeader() {
           onMouseLeave={() => setWorkOpen(false)}
         >
           <NavLink className={({ isActive }) => isActive || location.pathname.startsWith('/work') ? 'active' : ''} to="/work">
-            Work
+            Collections
           </NavLink>
           <button
             className="menu-toggle"
@@ -77,8 +77,7 @@ function SiteHeader() {
 function WorkPage() {
   return (
     <main className="page work-index">
-      <p className="eyebrow">Selected work</p>
-      <h1>Work</h1>
+      <h1>Collections</h1>
       <div className="project-links">
         {projects.map((project, index) => (
           <Link key={project.slug} to={`/work/${project.slug}`}>
@@ -93,15 +92,44 @@ function WorkPage() {
 }
 
 function ProjectPage({ title }: { title: string }) {
+  const birdWorks = [
+    ['Stellers_Jay.jpeg', "Steller’s Jay", 'Acrylic', '10” x 8”', '2026'],
+    ['Puffin.jpeg', 'Puffin', 'Acrylic', '10” x 8”', '2026'],
+    ['Cardinal.jpeg', 'Cardinal', 'Acrylic', '10” x 8”', '2026'],
+    ['Manu_o_ku.jpeg', 'Manu o ku', 'Acrylic', '10” x 8”', '2026'],
+    ['Loon.jpeg', 'Loon', 'Acrylic', '10” x 8”', '2026'],
+    ['Hummingbird.jpeg', 'Hummingbird', 'Acrylic', '10” x 8”', '2026'],
+    ['Chickadee.jpg', 'Chickadee', 'Acrylic', '8” x 10”', '2026'],
+  ];
+  const collectionWorks = [
+    ['Beaver.jpeg', 'Beaver', 'Acrylic', '10 x 8 in', '2026'],
+    ['Arizona.jpeg', 'Arizona', 'Acrylic', '8 x 10 in', '2026'],
+    ['California_Bighorn.jpeg', 'California Bighorn', 'Gouache and acrylic', '8 x 8 in', '2025'],
+    ['Sand_Harbor.jpg', 'Sand Harbor', 'Acrylic', '24 x 30 in', '2024'],
+    ['Rainbow_Trout.jpeg', 'Rainbow Trout', 'Acrylic and Mica Powder', '24 x 24 in', '2026'],
+  ];
+
   return (
     <main className="page project-page">
       <p className="eyebrow">Selected work</p>
       <h1>{title}</h1>
       <p className="statement-placeholder">Artist statement will be added here.</p>
       <div className="artwork-grid" aria-label={`${title} artwork image spaces`}>
-        {Array.from({ length: 6 }, (_, index) => (
-          <div className="artwork-slot" key={index} aria-label={`Artwork image space ${index + 1}`} />
-        ))}
+        {title === 'SNF Birds' || title === 'Other Work'
+          ? (title === 'SNF Birds' ? birdWorks : collectionWorks).map(([file, name, medium, dimensions, year]) => (
+              <figure className="artwork-card" key={file}>
+                <img className="artwork-slot" src={title === 'SNF Birds' ? `/pics/birds/${file}` : `/pics/other_works/${file}`} alt={name} />
+                <figcaption>
+                  <strong>{name}</strong>
+                  <span>{medium}</span>
+                  <span>{dimensions}</span>
+                  <span>{year}</span>
+                </figcaption>
+              </figure>
+            ))
+          : Array.from({ length: 6 }, (_, index) => (
+              <div className="artwork-slot" key={index} aria-label={`Artwork image space ${index + 1}`} />
+            ))}
       </div>
     </main>
   );
@@ -175,7 +203,7 @@ function Site() {
         <Route path="/work" element={<WorkPage />} />
         <Route path="/work/2-for-22" element={<ProjectPage title="2 for 22" />} />
         <Route path="/work/snf-birds" element={<ProjectPage title="SNF Birds" />} />
-        <Route path="/work/collection" element={<ProjectPage title="Collection" />} />
+        <Route path="/work/collection" element={<ProjectPage title="Other Work" />} />
         <Route path="/cv" element={<CvPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<SimplePage title="Contact" note="Contact details will be added here." />} />

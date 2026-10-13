@@ -40,7 +40,7 @@
   height: 23px;
   place-items: center;
   align-self: center;
-  transform: translateY(0px);
+  transform: translateY(-7px);
   color: #292321;
 }
 
@@ -149,7 +149,7 @@
 
 .home-intro {
   margin: 0 auto 38px;
-  text-align: center;
+  text-align: left;
 }
 
 .eyebrow {
@@ -305,8 +305,7 @@
   margin-left: auto;
   font-size: clamp(2rem, 3.5vw, 3.25rem);
   line-height: 1.22;
-  text-align: left;
-  transform: translateX(clamp(24px, 6vw, 84px));
+  text-align: center;
 }
 
 .cv-section h2 {
@@ -349,10 +348,6 @@
 
   .home-page {
     min-height: calc(100vh - 145px);
-  }
-
-  .about-page h1 {
-    transform: none;
   }
 
   .featured-artwork {

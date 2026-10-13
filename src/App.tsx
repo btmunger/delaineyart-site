@@ -135,7 +135,7 @@ function ProjectPage({ title }: { title: string }) {
     <main className="page project-page">
       <h1>{title}</h1>
       <p className="statement-placeholder">{statement}</p>
-      <div className="artwork-grid" aria-label={`${title} artwork image spaces`}>
+      <div className={`artwork-grid${title === '2 for 22' ? ' two-for-22-grid' : ''}`} aria-label={`${title} artwork image spaces`}>
         {title === 'SNF Birds' || title === 'Other Work' || title === '2 for 22'
           ? (title === 'SNF Birds' ? birdWorks : title === 'Other Work' ? collectionWorks : []).map(([file, name, medium, dimensions, year]) => (
               <figure className="artwork-card" key={file}>

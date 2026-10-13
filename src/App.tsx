@@ -108,15 +108,33 @@ function ProjectPage({ title }: { title: string }) {
     ['Sand_Harbor.jpg', 'Sand Harbor', 'Acrylic', '24 x 30 in', '2024'],
     ['Rainbow_Trout.jpeg', 'Rainbow Trout', 'Acrylic and Mica Powder', '24 x 24 in', '2026'],
   ];
+  const twoFor22Works = [
+    ['1_soul_enter.jpeg', 'Where Did Your Soul Enter the World?', 'Acrylic on canvas', '24 x 20 in', '2026'],
+    ['2_reading_time.jpeg', 'Reading Time', 'Acrylic on canvas', '24 x 18 in', '2025'],
+    ['3_birthday_girl.jpeg', 'Birthday Girl', 'Acrylic, felt, pom-poms on canvas', '12 x 9 in', '2025'],
+    ['4_cake.jpeg', 'Cake for Two', 'Paper mache, cardboard, wire, acrylic, clay', '11 1/2 x 6 x 6 in', '2025'],
+    ['5_left.jpeg', 'Special Occasion - left', 'Acrylic on canvas', '18 x 24 in', '2025'],
+    ['6_right.jpeg', 'Special Occasion - right', 'Acrylic on canvas', '18 x 24 in', '2025'],
+    ['7_Letter_To_You.jpg', 'Letter to you', 'Acrylic on canvas', '10 x 8 in', '2026'],
+    ['7_wild_horses.jpeg', 'Wild Horses', 'Acrylic on canvas', '24 x 20 in', '2026'],
+    ['8_tiny_travelers.jpeg', 'Twin Travelers', 'Acrylic on canvas', '30 x 37 in', '2025'],
+    ['9_state_flowers.jpeg', 'State Flowers', 'Acrylic on canvas', '24 x 18 in', '2025'],
+    ['10_happiest.jpeg', 'Happiest', 'Acrylic, mica powder on canvas', '24 x 36 in', '2026'],
+    ['11_dress_up.jpeg', 'Dress up Delainey', 'Acrylic, magnets on canvas', '18 x 24 in', '2026'],
+    ['12_Shirt.jpg', 'Shirt 1', 'Acrylic, cardboard, magnet', '2026'],
+    ['13_Shirt.jpg', 'Shirt 2', 'Acrylic, cardboard, magnet', '2026'],
+    ['14_Pant_1.jpg', 'Pant 1', 'Acrylic, cardboard, magnet', '2026'],
+    ['15_Pants_2.jpg', 'Pant 2', 'Acrylic, cardboard, magnet', '2026'],
+    ['16_Shoes_1.jpg', 'Shoes 1', 'Acrylic, cardboard, magnet', '2026'],
+  ];
 
   return (
     <main className="page project-page">
-      <p className="eyebrow">Selected work</p>
       <h1>{title}</h1>
       <p className="statement-placeholder">Artist statement will be added here.</p>
       <div className="artwork-grid" aria-label={`${title} artwork image spaces`}>
-        {title === 'SNF Birds' || title === 'Other Work'
-          ? (title === 'SNF Birds' ? birdWorks : collectionWorks).map(([file, name, medium, dimensions, year]) => (
+        {title === 'SNF Birds' || title === 'Other Work' || title === '2 for 22'
+          ? (title === 'SNF Birds' ? birdWorks : title === 'Other Work' ? collectionWorks : []).map(([file, name, medium, dimensions, year]) => (
               <figure className="artwork-card" key={file}>
                 <img className="artwork-slot" src={title === 'SNF Birds' ? `/pics/birds/${file}` : `/pics/other_works/${file}`} alt={name} />
                 <figcaption>
@@ -126,7 +144,17 @@ function ProjectPage({ title }: { title: string }) {
                   <span>{year}</span>
                 </figcaption>
               </figure>
-            ))
+            )).concat(title === '2 for 22' ? twoFor22Works.map(([file, name, medium, dimensions, year]) => (
+              <figure className="artwork-card" key={file}>
+                <img className="artwork-slot" src={`/pics/two_twenty_two/${file}`} alt={name} />
+                <figcaption>
+                  <strong>{name}</strong>
+                  <span>{medium}</span>
+                  <span>{dimensions}</span>
+                  <span>{year}</span>
+                </figcaption>
+              </figure>
+            )) : [])
           : Array.from({ length: 6 }, (_, index) => (
               <div className="artwork-slot" key={index} aria-label={`Artwork image space ${index + 1}`} />
             ))}

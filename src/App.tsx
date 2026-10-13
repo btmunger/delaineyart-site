@@ -92,6 +92,9 @@ function WorkPage() {
 }
 
 function ProjectPage({ title }: { title: string }) {
+  const statement = title === 'SNF Birds'
+    ? 'Sitting along the edge of a river, my friend group sat in silence watching the water go by. One of my best friends spoke up and asked, “So what\'s your favorite bird?” At the moment it was hilarious and random, but it kept me thinking: how can I not know this about them? How could I not know the random, funny, unspoken facts about them? I knew we were going our separate ways as college graduation inched closer. I wanted to use my favorite people\'s favorite birds as a way to say, “I know you, you know me.” Each bird represents each person in the group chat, “Short and Fat,” all sitting on the same branch, in the same place. This collection will most likely never be shown again, as I gave each of the paintings away to their rightful owners at graduation.'
+    : 'Artist statement will be added here.';
   const birdWorks = [
     ['Stellers_Jay.jpeg', "Steller’s Jay", 'Acrylic', '10” x 8”', '2026'],
     ['Puffin.jpeg', 'Puffin', 'Acrylic', '10” x 8”', '2026'],
@@ -131,7 +134,7 @@ function ProjectPage({ title }: { title: string }) {
   return (
     <main className="page project-page">
       <h1>{title}</h1>
-      <p className="statement-placeholder">Artist statement will be added here.</p>
+      <p className="statement-placeholder">{statement}</p>
       <div className="artwork-grid" aria-label={`${title} artwork image spaces`}>
         {title === 'SNF Birds' || title === 'Other Work' || title === '2 for 22'
           ? (title === 'SNF Birds' ? birdWorks : title === 'Other Work' ? collectionWorks : []).map(([file, name, medium, dimensions, year]) => (

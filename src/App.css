@@ -267,30 +267,16 @@
 
 .artwork-card .artwork-slot {
   width: 100%;
-  height: clamp(200px, 29vw, 430px);
+  height: auto;
   min-height: 0;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .two-for-22-grid .artwork-card .artwork-slot {
   height: auto;
   min-height: 0;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: auto;
 }
-
-.two-for-22-grid .artwork-card:nth-child(1) .artwork-slot { aspect-ratio: 24 / 20; }
-.two-for-22-grid .artwork-card:nth-child(2) .artwork-slot { aspect-ratio: 24 / 18; }
-.two-for-22-grid .artwork-card:nth-child(3) .artwork-slot { aspect-ratio: 12 / 9; }
-.two-for-22-grid .artwork-card:nth-child(4) .artwork-slot { aspect-ratio: 11.5 / 6; }
-.two-for-22-grid .artwork-card:nth-child(5) .artwork-slot,
-.two-for-22-grid .artwork-card:nth-child(6) .artwork-slot { aspect-ratio: 18 / 24; }
-.two-for-22-grid .artwork-card:nth-child(7) .artwork-slot { aspect-ratio: 10 / 8; }
-.two-for-22-grid .artwork-card:nth-child(8) .artwork-slot { aspect-ratio: 24 / 20; }
-.two-for-22-grid .artwork-card:nth-child(9) .artwork-slot { aspect-ratio: 30 / 37; }
-.two-for-22-grid .artwork-card:nth-child(10) .artwork-slot { aspect-ratio: 24 / 18; }
-.two-for-22-grid .artwork-card:nth-child(11) .artwork-slot { aspect-ratio: 24 / 36; }
-.two-for-22-grid .artwork-card:nth-child(12) .artwork-slot { aspect-ratio: 18 / 24; }
-.two-for-22-grid .artwork-card:nth-child(n + 13) .artwork-slot { aspect-ratio: 16 / 10; }
 
 .artwork-card figcaption {
   display: grid;

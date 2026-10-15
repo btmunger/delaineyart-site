@@ -320,6 +320,23 @@
   margin-bottom: 28px;
 }
 
+.contact-copy {
+  width: min(100%, 620px);
+  color: #403532;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.contact-copy p {
+  margin: 0 0 24px;
+}
+
+.contact-copy a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
 .cv-page h1 {
   margin-bottom: clamp(48px, 7vw, 90px);
   text-align: center;
@@ -341,6 +358,15 @@
   font-size: clamp(2rem, 3.5vw, 3.25rem);
   line-height: 1.22;
   text-align: center;
+}
+
+.about-bio {
+  width: min(100%, 720px);
+  margin: 34px auto 0;
+  color: #403532;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.8;
+  text-align: left;
 }
 
 .cv-section h2 {

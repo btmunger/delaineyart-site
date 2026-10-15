@@ -94,7 +94,9 @@ function WorkPage() {
 function ProjectPage({ title }: { title: string }) {
   const statement = title === 'SNF Birds'
     ? 'Sitting along the edge of a river, my friend group sat in silence watching the water go by. One of my best friends spoke up and asked, “So what\'s your favorite bird?” At the moment it was hilarious and random, but it kept me thinking: how can I not know this about them? How could I not know the random, funny, unspoken facts about them? I knew we were going our separate ways as college graduation inched closer. I wanted to use my favorite people\'s favorite birds as a way to say, “I know you, you know me.” Each bird represents each person in the group chat, “Short and Fat,” all sitting on the same branch, in the same place. This collection will most likely never be shown again, as I gave each of the paintings away to their rightful owners at graduation.'
-    : 'Artist statement will be added here.';
+    : title === '2 for 22'
+      ? 'If there was one day where you were granted the ability to meet the younger version of yourself, would you take it? I wanted to explore the idea through a series of paintings of who I am at my core and in my soul. Could I meet a younger version of myself and see how much I\'ve changed? How similar are we? What would we do together? This series tells the story of my 22nd birthday and cashing in my wish of meeting a younger me and being able to spend a day with someone who knows the most about myself - ME. I used this time to confront and question the terrifying idea of how a different version of myself would think about current me and my accomplishments.'
+      : 'Artist statement will be added here.';
   const birdWorks = [
     ['Stellers_Jay.jpeg', "Steller’s Jay", 'Acrylic', '10” x 8”', '2026'],
     ['Puffin.jpeg', 'Puffin', 'Acrylic', '10” x 8”', '2026'],
@@ -134,7 +136,7 @@ function ProjectPage({ title }: { title: string }) {
   return (
     <main className="page project-page">
       <h1>{title}</h1>
-      <p className="statement-placeholder">{statement}</p>
+      {title !== 'Other Work' && <p className="statement-placeholder">{statement}</p>}
       <div className={`artwork-grid${title === '2 for 22' ? ' two-for-22-grid' : ''}`} aria-label={`${title} artwork image spaces`}>
         {title === 'SNF Birds' || title === 'Other Work' || title === '2 for 22'
           ? (title === 'SNF Birds' ? birdWorks : title === 'Other Work' ? collectionWorks : []).map(([file, name, medium, dimensions, year]) => (
@@ -221,6 +223,26 @@ function AboutPage() {
     <main className="page about-page">
       <p className="eyebrow">About</p>
       <h1>Delainey Anderson is an artist and painter currently based in Gilbert, Arizona.</h1>
+      <p className="about-bio">
+        Born and raised in Northern Nevada, she draws a lot of influence from nature and the outdoors. Her work explores the ideas of who we are at our core and how nature has an effect on us. In 2026, she graduated from Oregon State University with a Bachelor of Fine Arts in Studio Art with a concentration in painting, additionally with an art history minor.
+      </p>
+    </main>
+  );
+}
+
+function ContactPage() {
+  return (
+    <main className="page simple-page contact-page">
+      <p className="eyebrow">Delainey Anderson</p>
+      <h1>Contact</h1>
+      <div className="contact-copy">
+        <p>I would love to hear from you!</p>
+        <p>If you have inquiries regarding myself or my artwork, please contact me using the info below.</p>
+        <p>
+          Email: <a href="mailto:delaineyandersonart@gmail.com">delaineyandersonart@gmail.com</a><br />
+          Instagram: <a href="https://www.instagram.com/delaineyandersonart/" target="_blank" rel="noreferrer">delaineyandersonart</a>
+        </p>
+      </div>
     </main>
   );
 }
@@ -237,7 +259,7 @@ function Site() {
         <Route path="/work/collection" element={<ProjectPage title="Other Work" />} />
         <Route path="/cv" element={<CvPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<SimplePage title="Contact" note="Contact details will be added here." />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<SimplePage title="Page not found" note="The page you are looking for does not exist." />} />
       </Routes>
     </BrowserRouter>
